@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Космические праздники | Аниматоры в Москве и области</title>
+    <meta name="description" content="Профессиональные аниматоры для ваших праздников. Космонавты, пираты, супергерои, ростовые куклы. Выезд по Москве и области.">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-rocket"></i>
+                Космические праздники
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Меню">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Услуги</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#characters">Персонажи</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Галерея</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">Контакты</a>
+                    </li>
+                    <li class="nav-item" id="authButtons">
+                        <button class="btn btn-outline-primary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Вход</button>
+                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#registerModal">Регистрация</button>
+                    </li>
+                    <li class="nav-item" id="userGreeting" style="display: none;">
+                        <span class="navbar-text me-2" id="greetingText"></span>
+                        <a href="profile.html" class="navbar-text me-2" id="profileLink" style="display: none;">
+                            <i class="fas fa-user"></i> Профиль
+                        </a>
+                        <button class="btn btn-outline-secondary btn-sm" id="logoutBtn">Выйти</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                            <i class="fas fa-moon"></i>
+                            <span>Темная</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+        <div class="container">
+            <div class="row min-vh-100 align-items-center py-5">
+                <div class="col-lg-8">
+                    <span class="badge bg-primary mb-3" data-aos="fade-right">Космические праздники в Москве и области</span>
+                    <h1 class="display-3 fw-bold mb-4"> 
+                        Сделаем праздник<br>
+                        <span class="text-warning">настоящим космосом</span>
+                    </h1>
+                    <p class="lead mb-4" data-aos="fade-right" data-aos-delay="100">
+                        Космонавты, пираты, супергерои, ростовые куклы и любимые персонажи. 
+                        Выезжаем в любую точку Москвы и области!
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap" data-aos="fade-right" data-aos-delay="200">
+                        <a href="#" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#orderModal">
+                            <i class="fas fa-calendar-check me-2"></i>Заказать праздник
+                        </a>
+                        <a href="#" class="btn btn-outline-primary btn-lg">
+                            <i class="fab fa-whatsapp me-2"></i>Написать в WhatsApp
+                        </a>
+                    </div>
+                    
+                    <div class="stats-container mt-5" data-aos="fade-right" data-aos-delay="300">
+                        <div class="row g-3">
+                            <div class="col-4">
+                                <h2 class="counter" data-target="500">0</h2>
+                                <p>Праздников</p>
+                            </div>
+                            <div class="col-4">
+                                <h2 class="counter" data-target="50">0</h2>
+                                <p>Персонажей</p>
+                            </div>
+                            <div class="col-4">
+                                <h2 class="counter" data-target="100">0</h2>
+                                <p>% Довольных</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-down">
+            <a href="#services" aria-label="Прокрутить вниз">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary mb-2">Что мы предлагаем</span>
+                <h2 class="display-5 fw-bold">Наши услуги</h2>
+                <p class="lead text-secondary">Выбирайте праздник под любой вкус</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-birthday-cake"></i>
+                        </div>
+                        <h4>Дни рождения</h4>
+                        <p class="text-secondary">Любимые герои, конкурсы и море подарков для именинника</p>
+                        <span class="price-badge">от 15 000 ₽</span>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Выпускные</h4>
+                        <p class="text-secondary">Провожаем в школу и из школы с размахом</p>
+                        <span class="price-badge">от 25 000 ₽</span>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h4>Корпоративы</h4>
+                        <p class="text-secondary">Взрослые тоже любят праздники</p>
+                        <span class="price-badge">договорная</span>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="400">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <h4>Новый год</h4>
+                        <p class="text-secondary">Дед Мороз, Снегурочка и зимние чудеса</p>
+                        <span class="price-badge">от 20 000 ₽</span>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="500">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mask"></i>
+                        </div>
+                        <h4>Тематические</h4>
+                        <p class="text-secondary">Космос, пираты, супергерои, сказки</p>
+                        <span class="price-badge">от 18 000 ₽</span>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="flip-left" data-aos-delay="600">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h4>Выезд по области</h4>
+                        <p class="text-secondary">Приедем в любую точку Москвы и области</p>
+                        <span class="price-badge">+ 50 ₽/км</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="characters" class="characters-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary mb-2">Наши герои</span>
+                <h2 class="display-5 fw-bold">Персонажи для праздника</h2>
+                <p class="lead text-secondary">Самые популярные герои для ваших детей</p>
+            </div>
+            
+            <div class="row g-4" id="character-grid">
+            </div>
+            
+            <div class="text-center mt-5">
+                <button id="loadMore" class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-spinner me-2"></i>Загрузить еще
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="offers-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary mb-2">Космические тарифы</span>
+                <h2 class="display-5 fw-bold">Выберите свой уровень</h2>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="offer-card">
+                        <h3>"СТАРТ"</h3>
+                        <div class="price">15 000 ₽</div>
+                        <ul class="offer-list">
+                            <li><i class="fas fa-check"></i>1 аниматор</li>
+                            <li><i class="fas fa-check"></i>1 час программы</li>
+                            <li><i class="fas fa-check"></i>Мыльные пузыри</li>
+                            <li><i class="fas fa-check"></i>Аквагрим</li>
+                        </ul>
+                        <a href="tariff-start.html" class="btn btn-outline-primary w-100">Выбрать</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="offer-card popular">
+                        <div class="popular-badge">ХИТ</div>
+                        <h3>"ПЛАНЕТА"</h3>
+                        <div class="price">25 000 ₽</div>
+                        <ul class="offer-list">
+                            <li><i class="fas fa-check"></i>2 аниматора</li>
+                            <li><i class="fas fa-check"></i>1.5 часа</li>
+                            <li><i class="fas fa-check"></i>Шоу пузырей</li>
+                            <li><i class="fas fa-check"></i>Аквагрим+глиттер</li>
+                            <li><i class="fas fa-check"></i>Фотограф 30 мин</li>
+                        </ul>
+                        <a href="tariff-planeta.html" class="btn btn-primary w-100">Выбрать</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="offer-card">
+                        <h3>"ГАЛАКТИКА"</h3>
+                        <div class="price">40 000 ₽</div>
+                        <ul class="offer-list">
+                            <li><i class="fas fa-check"></i>2 аниматора</li>
+                            <li><i class="fas fa-check"></i>2 часа</li>
+                            <li><i class="fas fa-check"></i>Химическое шоу</li>
+                            <li><i class="fas fa-check"></i>Фотограф 1 час</li>
+                            <li><i class="fas fa-check"></i>Слайм-шоу</li>
+                        </ul>
+                        <a href="tariff-galaktika.html" class="btn btn-outline-primary w-100">Выбрать</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="offer-card">
+                        <h3>"ВСЕЛЕННАЯ"</h3>
+                        <div class="price">по запросу</div>
+                        <ul class="offer-list">
+                            <li><i class="fas fa-check"></i>Индивидуальный</li>
+                            <li><i class="fas fa-check"></i>Любые персонажи</li>
+                            <li><i class="fas fa-check"></i>Ростовые куклы</li>
+                            <li><i class="fas fa-check"></i>Полная свобода</li>
+                        </ul>
+                        <a href="tariff-vselennaya.html" class="btn btn-outline-primary w-100">Узнать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="orderModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Заказать космический праздник</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="orderForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Ваше имя *</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Телефон *</label>
+                                <input type="tel" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Дата праздника</label>
+                                <input type="date" class="form-control">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Выберите услугу</label>
+                                <select class="form-select">
+                                    <option>День рождения</option>
+                                    <option>Выпускной</option>
+                                    <option>Корпоратив</option>
+                                    <option>Новый год</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Количество детей</label>
+                                <input type="number" class="form-control" min="1" max="50">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Дополнительные пожелания</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="submit" form="orderForm" class="btn btn-primary">Отправить заявку</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Вход в личный кабинет</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="loginEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Пароль</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="submit" form="loginForm" class="btn btn-primary">Войти</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Регистрация</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="mb-3">
+                            <label for="registerName" class="form-label">Имя</label>
+                            <input type="text" class="form-control" id="registerName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="registerEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPassword" class="form-label">Пароль</label>
+                            <input type="password" class="form-control" id="registerPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerConfirmPassword" class="form-label">Подтверждение пароля</label>
+                            <input type="password" class="form-control" id="registerConfirmPassword" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="submit" form="registerForm" class="btn btn-primary">Зарегистрироваться</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5>
+                        <i class="fas fa-rocket me-2 text-primary"></i>
+                        Космические праздники
+                    </h5>
+                    <p class="text-muted">
+                        ИП Иванов И.И.<br>
+                        ИНН 1234567890<br>
+                        ОГРНИП 1234567890123
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Навигация</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#home" class="text-muted text-decoration-none">Главная</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#services" class="text-muted text-decoration-none">Услуги</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#characters" class="text-muted text-decoration-none">Персонажи</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="contacts.html" class="text-muted text-decoration-none">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Контакты</h5>
+                    <p class="mb-2">
+                        <i class="fas fa-phone me-2 text-primary"></i>
+                        <a href="tel:+79991234567" class="text-muted text-decoration-none">+7 (999) 123-45-67</a>
+                    </p>
+                    <p class="mb-2">
+                        <i class="fab fa-whatsapp me-2 text-primary"></i>
+                        <a href="https://wa.me/79991234567" class="text-muted text-decoration-none">+7 (999) 123-45-67</a>
+                    </p>
+                    <p class="mb-2">
+                        <i class="fas fa-envelope me-2 text-primary"></i>
+                        <a href="mailto:info@cosmic-party.ru" class="text-muted text-decoration-none">info@cosmic-party.ru</a>
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center text-muted small">
+                © 2026 Космические праздники. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init();
+        });
+    </script>
+</body>
+</html>

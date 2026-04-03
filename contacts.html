@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты | Космические праздники</title>
+    <meta name="description" content="Контакты агентства космические праздники. Телефон, WhatsApp, Telegram, email, реквизиты ИП, часы работы.">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-rocket"></i>
+                Космические праздники
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#services">Услуги</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#characters">Персонажи</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Галерея</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contacts.html">Контакты</a>
+                    </li>
+                    <li class="nav-item" id="authButtons">
+                        <button class="btn btn-outline-primary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Вход</button>
+                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#registerModal">Регистрация</button>
+                    </li>
+                    <li class="nav-item" id="userGreeting" style="display: none;">
+                        <span class="navbar-text me-2" id="greetingText"></span>
+                        <a href="profile.html" class="navbar-text me-2" id="profileLink" style="display: none;">
+                            <i class="fas fa-user"></i> Профиль
+                        </a>
+                        <button class="btn btn-outline-secondary btn-sm" id="logoutBtn">Выйти</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="theme-toggle" id="themeToggle">
+                            <i class="fas fa-moon"></i>
+                            <span>Темная</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="display-4 fw-bold" data-aos="fade-up">Контакты</h1>
+            <p class="lead" data-aos="fade-up" data-aos-delay="100">Свяжитесь с нами любым удобным способом</p>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div data-aos="fade-right">
+                        <h2 class="fw-bold mb-4">Как с нами связаться</h2>
+                        
+                        <div class="contact-item d-flex align-items-center">
+                            <div class="contact-icon me-3">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Телефон</h5>
+                                <a href="tel:+79991234567" class="fs-5">+7 (999) 123-45-67</a>
+                                <p class="text-secondary small mb-0">Ежедневно с 10:00 до 22:00</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item d-flex align-items-center">
+                            <div class="contact-icon me-3">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">WhatsApp</h5>
+                                <a href="https://wa.me/79991234567" class="fs-5">+7 (999) 123-45-67</a>
+                                <p class="text-secondary small mb-0">Отвечаем быстро</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item d-flex align-items-center">
+                            <div class="contact-icon me-3">
+                                <i class="fab fa-telegram-plane"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Telegram</h5>
+                                <a href="https://t.me/cosmic_party" class="fs-5">@cosmic_party</a>
+                                <p class="text-secondary small mb-0">Для быстрых вопросов</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item d-flex align-items-center">
+                            <div class="contact-icon me-3">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Email</h5>
+                                <a href="mailto:info@cosmic-party.ru" class="fs-5">info@cosmic-party.ru</a>
+                                <p class="text-secondary small mb-0">Для документов и договоров</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item d-flex align-items-center">
+                            <div class="contact-icon me-3">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Адрес</h5>
+                                <p class="mb-1 fs-5">г. Москва, ул. Космическая, д. 42</p>
+                                <p class="text-secondary small mb-0">Офис по предварительной записи</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div data-aos="fade-left">
+                        <h2 class="fw-bold mb-4">Мы в соцсетях</h2>
+                        
+                        <div class="row g-3 mb-5">
+                            <div class="col-6">
+                                <a href="#" class="social-card d-block">
+                                    <i class="fab fa-vk text-primary"></i>
+                                    <h5 class="mb-0">ВКонтакте</h5>
+                                    <small class="text-secondary">@cosmic_party</small>
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="social-card d-block">
+                                    <i class="fab fa-instagram text-danger"></i>
+                                    <h5 class="mb-0">Instagram</h5>
+                                    <small class="text-secondary">@cosmic_party</small>
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="social-card d-block">
+                                    <i class="fab fa-youtube text-danger"></i>
+                                    <h5 class="mb-0">YouTube</h5>
+                                    <small class="text-secondary">Cosmic Party</small>
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="social-card d-block">
+                                    <i class="fab fa-tiktok text-dark"></i>
+                                    <h5 class="mb-0">TikTok</h5>
+                                    <small class="text-secondary">@cosmic_party</small>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="mt-5">
+                            <h3 class="fw-bold mb-3">Реквизиты ИП</h3>
+                            <div class="bg-light p-4 rounded-4">
+                                <p class="mb-2"><strong>ИП Иванов Иван Иванович</strong></p>
+                                <p class="mb-1 text-secondary">ИНН: 123456789012</p>
+                                <p class="mb-1 text-secondary">ОГРНИП: 123456789012345</p>
+                                <p class="mb-1 text-secondary">Расчетный счет: 40802810123450123456</p>
+                                <p class="mb-1 text-secondary">Банк: ПАО "Сбербанк"</p>
+                                <p class="mb-1 text-secondary">БИК: 044525225</p>
+                                <p class="mb-0 text-secondary">Корр. счет: 30101810400000000225</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-5">
+                            <h3 class="fw-bold mb-3">Часы работы</h3>
+                            <div class="bg-light p-4 rounded-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Пн - Пт:</span>
+                                    <span class="fw-bold">10:00 - 22:00</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Суббота:</span>
+                                    <span class="fw-bold">10:00 - 23:00</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Воскресенье:</span>
+                                    <span class="fw-bold">10:00 - 22:00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-5">
+                            <h3 class="fw-bold mb-3">Как нас найти</h3>
+                            <div class="bg-light p-4 rounded-4 text-center">
+                                <p class="mb-3">Мы на карте</p>
+                                <a href="https://yandex.ru/maps/?text=Москва+ул.+Космическая+42" 
+                                   target="_blank" 
+                                   class="btn btn-primary">
+                                    <i class="fas fa-map me-2"></i>Открыть в Яндекс.Картах
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Вход в личный кабинет</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="loginEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Пароль</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="submit" form="loginForm" class="btn btn-primary">Войти</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Регистрация</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="mb-3">
+                            <label for="registerName" class="form-label">Имя</label>
+                            <input type="text" class="form-control" id="registerName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="registerEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPassword" class="form-label">Пароль</label>
+                            <input type="password" class="form-control" id="registerPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerConfirmPassword" class="form-label">Подтверждение пароля</label>
+                            <input type="password" class="form-control" id="registerConfirmPassword" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="submit" form="registerForm" class="btn btn-primary">Зарегистрироваться</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="orderModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Заказать космический праздник</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="orderForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Ваше имя *</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Телефон *</label>
+                                <input type="tel" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Дата праздника</label>
+                                <input type="date" class="form-control">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Выберите услугу</label>
+                                <select class="form-select">
+                                    <option>День рождения</option>
+                                    <option>Выпускной</option>
+                                    <option>Корпоратив</option>
+                                    <option>Новый год</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Количество детей</label>
+                                <input type="number" class="form-control" min="1" max="50">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Дополнительные пожелания</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="submit" form="orderForm" class="btn btn-primary">Отправить заявку</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5>
+                        <i class="fas fa-rocket me-2 text-primary"></i>
+                        Космические праздники
+                    </h5>
+                    <p class="text-muted">
+                        ИП Иванов И.И.<br>
+                        ИНН 1234567890<br>
+                        ОГРНИП 1234567890123
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Навигация</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="index.html" class="text-muted text-decoration-none">Главная</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="index.html#services" class="text-muted text-decoration-none">Услуги</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="index.html#characters" class="text-muted text-decoration-none">Персонажи</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="contacts.html" class="text-muted text-decoration-none">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Контакты</h5>
+                    <p class="mb-2">
+                        <i class="fas fa-phone me-2 text-primary"></i>
+                        <a href="tel:+79991234567" class="text-muted text-decoration-none">+7 (999) 123-45-67</a>
+                    </p>
+                    <p class="mb-2">
+                        <i class="fab fa-whatsapp me-2 text-primary"></i>
+                        <a href="https://wa.me/79991234567" class="text-muted text-decoration-none">+7 (999) 123-45-67</a>
+                    </p>
+                    <p class="mb-2">
+                        <i class="fas fa-envelope me-2 text-primary"></i>
+                        <a href="mailto:info@cosmic-party.ru" class="text-muted text-decoration-none">info@cosmic-party.ru</a>
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center text-muted small">
+                © 2026 Космические праздники. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init();
+        });
+    </script>
+</body>
+</html>

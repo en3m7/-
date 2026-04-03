@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея | Космические праздники</title>
+    <meta name="description" content="Фотографии с наших праздников: дни рождения, выпускные, корпоративы. Смотрите, как мы делаем детей счастливыми!">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .gallery-filters {
+            margin-bottom: 30px;
+        }
+        .gallery-filters .btn {
+            margin: 0 5px 10px;
+            border-radius: 50px;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 30px;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 35px var(--shadow-color);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-item-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .gallery-item:hover .gallery-item-caption {
+            opacity: 1;
+        }
+        .gallery-item-caption h5 {
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        .gallery-item-caption p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        /* Модальное окно для просмотра фото */
+        .gallery-modal .modal-content {
+            background: transparent;
+            border: none;
+        }
+        .gallery-modal .modal-body {
+            padding: 0;
+            text-align: center;
+        }
+        .gallery-modal img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 16px;
+        }
+        .gallery-modal .btn-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            padding: 10px;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-rocket"></i>
+                Космические праздники
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#services">Услуги</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#characters">Персонажи</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Галерея</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">Контакты</a>
+                    </li>
+                    <li class="nav-item" id="authButtons">
+                        <button class="btn btn-outline-primary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Вход</button>
+                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#registerModal">Регистрация</button>
+                    </li>
+                    <li class="nav-item" id="userGreeting" style="display: none;">
+                        <span class="navbar-text me-2" id="greetingText"></span>
+                        <a href="profile.html" class="navbar-text me-2" id="profileLink" style="display: none;">
+                            <i class="fas fa-user"></i> Профиль
+                        </a>
+                        <button class="btn btn-outline-secondary btn-sm" id="logoutBtn">Выйти</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="theme-toggle" id="themeToggle">
+                            <i class="fas fa-moon"></i>
+                            <span>Темная</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="display-4 fw-bold" data-aos="fade-up">Галерея наших праздников</h1>
+            <p class="lead" data-aos="fade-up" data-aos-delay="100">Посмотрите, как весело мы проводим дни рождения, выпускные и корпоративы</p>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container">
+            <div class="gallery-filters text-center" data-aos="fade-up">
+                <button class="btn btn-outline-primary active" data-filter="all">Все</button>
+                <button class="btn btn-outline-primary" data-filter="birthday">Дни рождения</button>
+                <button class="btn btn-outline-primary" data-filter="graduation">Выпускные</button>
+                <button class="btn btn-outline-primary" data-filter="corporate">Корпоративы</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4" id="gallery-grid">
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade gallery-modal" id="galleryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                <div class="modal-body">
+                    <img src="" alt="" id="galleryModalImage">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Вход в личный кабинет</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="loginEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Пароль</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="submit" form="loginForm" class="btn btn-primary">Войти</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Регистрация</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="mb-3">
+                            <label for="registerName" class="form-label">Имя</label>
+                            <input type="text" class="form-control" id="registerName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="registerEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPassword" class="form-label">Пароль</label>
+                            <input type="password" class="form-control" id="registerPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerConfirmPassword" class="form-label">Подтверждение пароля</label>
+                            <input type="password" class="form-control" id="registerConfirmPassword" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="submit" form="registerForm" class="btn btn-primary">Зарегистрироваться</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5>
+                        <i class="fas fa-rocket me-2 text-primary"></i>
+                        Космические праздники
+                    </h5>
+                    <p class="text-muted">
+                        ИП Иванов И.И.<br>
+                        ИНН 1234567890<br>
+                        ОГРНИП 1234567890123
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Навигация</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="index.html" class="text-muted text-decoration-none">Главная</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="index.html#services" class="text-muted text-decoration-none">Услуги</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="index.html#characters" class="text-muted text-decoration-none">Персонажи</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="gallery.html" class="text-muted text-decoration-none">Галерея</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="contacts.html" class="text-muted text-decoration-none">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Контакты</h5>
+                    <p class="mb-2">
+                        <i class="fas fa-phone me-2 text-primary"></i>
+                        <a href="tel:+79991234567" class="text-muted text-decoration-none">+7 (999) 123-45-67</a>
+                    </p>
+                    <p class="mb-2">
+                        <i class="fab fa-whatsapp me-2 text-primary"></i>
+                        <a href="https://wa.me/79991234567" class="text-muted text-decoration-none">+7 (999) 123-45-67</a>
+                    </p>
+                    <p class="mb-2">
+                        <i class="fas fa-envelope me-2 text-primary"></i>
+                        <a href="mailto:info@cosmic-party.ru" class="text-muted text-decoration-none">info@cosmic-party.ru</a>
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center text-muted small">
+                © 2026 Космические праздники. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init();
+        });
+    </script>
+
+    <script>
+        (function() {
+            const galleryItems = [
+                {
+                    id: 1,
+                    title: 'День рождения Максима',
+                    category: 'birthday',
+                    description: 'Космическая вечеринка с астронавтами',
+                    image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&auto=format'
+                },
+                {
+                    id: 2,
+                    title: 'Выпускной в детском саду',
+                    category: 'graduation',
+                    description: 'Пиратское приключение',
+                    image: 'https://images.pexels.com/photos/5866871/pexels-photo-5866871.jpeg?auto=compress&cs=tinysrgb&w=600'
+                },
+                {
+                    id: 3,
+                    title: 'Корпоратив в IT-компании',
+                    category: 'corporate',
+                    description: 'Космическая вечеринка для взрослых',
+                    image: 'https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=600'
+                },
+                {
+                    id: 4,
+                    title: 'День рождения Алисы',
+                    category: 'birthday',
+                    description: 'Шоу мыльных пузырей',
+                    image: 'https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=600'
+                },
+                {
+                    id: 5,
+                    title: 'Выпускной в школе',
+                    category: 'graduation',
+                    description: 'Сказочные герои',
+                    image: 'https://images.pexels.com/photos/5866867/pexels-photo-5866867.jpeg?auto=compress&cs=tinysrgb&w=600'
+                },
+                {
+                    id: 6,
+                    title: 'Новый год в офисе',
+                    category: 'corporate',
+                    description: 'Дед Мороз и Снегурочка',
+                    image: 'https://images.pexels.com/photos/3799790/pexels-photo-3799790.jpeg?auto=compress&cs=tinysrgb&w=600'
+                },
+                {
+                    id: 7,
+                    title: 'День рождения Вани',
+                    category: 'birthday',
+                    description: 'Супергеройская вечеринка',
+                    image: 'https://images.pexels.com/photos/4961375/pexels-photo-4961375.jpeg?auto=compress&cs=tinysrgb&w=600'
+                },
+                {
+                    id: 8,
+                    title: 'Корпоратив "Планета"',
+                    category: 'corporate',
+                    description: 'Химическое шоу',
+                    image: 'https://images.pexels.com/photos/4046995/pexels-photo-4046995.jpeg?auto=compress&cs=tinysrgb&w=600'
+                },
+                {
+                    id: 9,
+                    title: 'Выпускной в гимназии',
+                    category: 'graduation',
+                    description: 'Фотозона',
+                    image: 'https://images.pexels.com/photos/5866868/pexels-photo-5866868.jpeg?auto=compress&cs=tinysrgb&w=600'
+                }
+            ];
+
+            const grid = document.getElementById('gallery-grid');
+            const filterButtons = document.querySelectorAll('.gallery-filters .btn');
+            let currentFilter = 'all';
+
+            // Рендер элементов галереи
+            function renderGallery(filter) {
+                const filtered = filter === 'all' ? galleryItems : galleryItems.filter(item => item.category === filter);
+                grid.innerHTML = filtered.map(item => `
+                    <div class="col-md-4 col-sm-6 gallery-item" data-category="${item.category}" data-id="${item.id}">
+                        <img src="${item.image}" alt="${item.title}" loading="lazy">
+                        <div class="gallery-item-caption">
+                            <h5>${item.title}</h5>
+                            <p>${item.description}</p>
+                        </div>
+                    </div>
+                `).join('');
+
+                // После рендера добавляем обработчики клика для каждого элемента
+                document.querySelectorAll('.gallery-item').forEach(item => {
+                    item.addEventListener('click', function() {
+                        const id = this.dataset.id;
+                        const imageItem = galleryItems.find(i => i.id == id);
+                        if (imageItem) {
+                            const modalImage = document.getElementById('galleryModalImage');
+                            modalImage.src = imageItem.image;
+                            modalImage.alt = imageItem.title;
+                            const modal = new bootstrap.Modal(document.getElementById('galleryModal'));
+                            modal.show();
+                        }
+                    });
+                });
+            }
+
+            // Переключение фильтра
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentFilter = this.dataset.filter;
+                    renderGallery(currentFilter);
+                });
+            });
+
+            // Первоначальный рендер
+            renderGallery('all');
+        })();
+    </script>
+</body>
+</html>
